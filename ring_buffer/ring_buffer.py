@@ -12,11 +12,10 @@ class RingBuffer:
         else:
             if self.counter is self.capacity:
                 self.counter = 0
-            print('self.counter:', self.counter)
             self.buffer_list.pop(self.counter)
+            self.buffer_list.insert(self.counter, item)
             self.counter += 1
-            self.buffer_list.insert(self.counter-1, item)
 
     def get(self):
-        print(self.buffer_list)
+        # print(self.buffer_list)
         return self.buffer_list
